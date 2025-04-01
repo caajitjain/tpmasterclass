@@ -1,12 +1,4 @@
-// Close menu when clicking a nav link on mobile
-    const navLinkItems = document.querySelectorAll('.nav-links ul li a');
-    navLinkItems.forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                navLinks.classList.remove('active');
-            }
-        });
-    });document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const navLinks = document.getElementById('navLinks');
     const openMenu = document.getElementById('openMenu');
@@ -40,6 +32,16 @@
             event.stopPropagation();
         });
     }
+    
+    // Close menu when clicking a nav link on mobile
+    const navLinkItems = document.querySelectorAll('.nav-links ul li a');
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
     
     // Testimonial Slider
     let currentSlide = 0;
@@ -108,7 +110,7 @@
     }, 8000);
     
     // Form Submission - using Formspree
-    // Note: Replace 'yourformspreeID' in the index.html form action with your actual Formspree form ID
+    // Note: Replace 'yourformspreeID' in the form action with your actual Formspree form ID
     const inquiryForm = document.getElementById('inquiryForm');
     
     if (inquiryForm) {
